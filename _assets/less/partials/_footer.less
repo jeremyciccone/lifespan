@@ -1,0 +1,47 @@
+footer {
+  padding-top:50px;
+
+  .matchbook {
+    background:#7494B3;
+    padding:50px;
+    color:#1B4268;
+    font-size:16px;
+    text-align:center;
+
+    p {
+      line-height:30px;
+      font-weight:300;
+    }
+
+    a {
+      color:@dk_blue;
+      font-weight:400;
+    }
+  }
+
+  .bottom {
+    min-height:100px;
+    display:block;
+    background-color:@dk_blue;
+
+    .copyright {
+      width:100%;
+      display:inline-block;
+      color:@lt_blue;
+      text-align:right;
+      .Merriweather();
+      padding:15px 15px 15px 0;
+
+      .year {
+        padding:0 5px;
+      }
+
+      &:before {
+        content:'\00a9';
+        padding-top:5px;
+        vertical-align: middle;
+        display:inline-block;
+      }
+    }
+  }
+}

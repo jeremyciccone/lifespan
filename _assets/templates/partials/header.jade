@@ -1,9 +1,10 @@
-header
+header(data-spy="affix" data-offset-top="0")
   .container-fluid
     .container.branding
       .row
         .col-lg-4.col-md-6.col-sm-4.col-xs-12
-          img(src!="<?php echo get_field('logo', 'option')['url']; ?>").img-responsive
+          a(href="/")
+            img(src!="<?php echo get_field('logo', 'option')['url']; ?>").img-responsive
         .col-lg-4.col-lg-offset-4.col-md-6.col-sm-8.hidden-xs
           ul.contact
             li 235 E. Ponce de Leon Ave.
@@ -12,23 +13,16 @@ header
               a(href="tel:4043732548") (404) 373-2548
             li 
               a(href="mailto:info@lifespan-services.com") info@lifespan-services.com
+
+
   
-  nav(data-spy="affix" data-offset-top="145").container-fluid
+  nav.container-fluid
     .container
-      .col-lg-12
-        ul.nav
-          li.hidden-lg.hidden-md.hidden-sm.menu
-            a(href="#")
-              span.glyphicon.glyphicon-menu-hamburger
-          li 
-            a(href="#").current-page Home
-          li 
-            a(href="#") Other Page
-          li 
-            a(href="#") Home
-          li 
-            a(href="#") Other Page
-          li 
-            a(href="#") Home
-          li 
-            a(href="#") Other Page
+      .row
+        .col-lg-12
+          ul.nav
+            li.hidden-lg.hidden-md.hidden-sm.menu
+              a(href="#")
+                span.glyphicon.glyphicon-menu-hamburger
+            :php
+              wp_nav_menu( array( 'theme_location' => '', 'menu' => 'ls-main', 'container' => false, 'items_wrap' => '%3$s' ) )

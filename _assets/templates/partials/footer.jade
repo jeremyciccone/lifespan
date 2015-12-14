@@ -6,6 +6,21 @@
    *
    * @package LifeSpan
    */
+footer
+  .container-fluid.matchbook
+    .container
+      .col-lg-10.col-lg-offset-1.col-md-12.col-sm-12.col-xs-12
+        !=the_field('statement', 'option')
+  
+  .container-fluid.bottom
+    .container  
+      span.copyright
+        span.year
+        !=the_field('copyright', 'option')
+  
+
+
+
 
 :php
   wp_footer();

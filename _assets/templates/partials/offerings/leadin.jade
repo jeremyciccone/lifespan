@@ -1,0 +1,26 @@
+:php
+  // The Query
+  $fields;
+  $the_query = new WP_Query( 'pagename=what-we-offer' );
+
+  // The Loop
+  if ( $the_query->have_posts() ) {
+  	while ( $the_query->have_posts() ) {
+  		$the_query->the_post();
+      $fields = array(
+        'lead_in_header' => get_field('lead_in_header'),
+        'lead_in_text' => get_field('lead_in_text')
+      );
+  	}
+  } else {
+  	// no posts found
+  }
+  /* Restore original Post Data */
+  wp_reset_postdata();
+
+.container-fluid
+  .container
+    .row
+      .col-lg-12.col-md-12.col-sm-12.col-xs-12
+        h1!=$fields['lead_in_header']
+        !=$fields['lead_in_text']
