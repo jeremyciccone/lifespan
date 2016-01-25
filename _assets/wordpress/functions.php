@@ -92,8 +92,8 @@ function custom_post_offering() {
 // Hook into the 'init' action
 add_action( 'init', 'custom_post_offering', 0 );
 
-add_filter('post_link', 'rating_permalink', 10, 3);
-add_filter('post_type_link', 'rating_permalink', 10, 3);
+// add_filter('post_link', 'rating_permalink', 10, 3);
+// add_filter('post_type_link', 'rating_permalink', 10, 3);
 
 function offering_permalink($permalink, $post_id, $leavename) {
     if (strpos($permalink, '%what-we-offer%') === FALSE) return $permalink;

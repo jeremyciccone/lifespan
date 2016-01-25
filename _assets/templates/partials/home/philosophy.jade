@@ -9,8 +9,8 @@
           :php
             the_field('philosophy_title')
 
-      .col-lg-8.col-md-8.col-sm-9.col-xs-12.philosphy-body
+      .col-lg-10.col-md-9.col-sm-9.col-xs-12.philosphy-body
         :php
           the_field('philosophy_body')
-      .col-lg-4.col-md-4.col-sm-3.hidden-xs
+      .col-lg-2.col-md-3.col-sm-3.hidden-xs
         img(src!="<?php echo $picture['url']; ?>" alt!="<?php echo $picture['alt'] ?>").img-responsive

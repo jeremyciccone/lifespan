@@ -3,9 +3,10 @@
   get_template_part( 'partials/head' );
   get_template_part( 'partials/header' );
 
-  get_template_part( 'partials/offerings/leadin' );
+.wrapper
+  :php
+    get_template_part( 'partials/offerings/leadin' );
 
-  get_template_part( 'partials/offerings/tiles' );
-  
-:php
-  get_template_part( 'partials/footer' );
+    get_template_part( 'partials/offerings/tiles' );
+
+    get_template_part( 'partials/footer' );

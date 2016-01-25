@@ -9,7 +9,12 @@ header {
       padding:10px 0;
       width:45%;
 
+      .tablet-only({
+        width:75%;
+      });
+
       .phone-only({
+        width:auto;
         margin:0 auto;
       });
     }
@@ -74,6 +79,7 @@ header {
         line-height:55px;
         margin:0;
         padding:5px;
+        font-size:16px;
 
         .phone-only({
           display:none;

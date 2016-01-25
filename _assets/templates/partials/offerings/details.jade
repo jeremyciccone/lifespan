@@ -1,17 +1,31 @@
-.container-fluid.offering-details
-  .container
-    .row
-      .col-lg-12.col-md-12.col-sm-12.col-xs-12
-        h1!=the_field('course_title')
-      .col-lg-12.col-md-12.col-sm-12.col-xs-12
-        !=the_field('course_description_brief')
-        !=the_field('course_description')
-    .row
-        - foreach(get_field('course_details') as $details):
-            .col-lg-4.col-md-4.col-sm-6.col-xs-12
-              h4!= $details['detail_title']
-              ul.equal-heights
-                - foreach($details['detail_list'] as $item):
-                  li!=$item['detail_item']
-                - endforeach;
-        - endforeach;
+:php
+  $photo = get_field('photo');
+
+.wrapper  
+  .container-fluid.offering-details
+    .container
+      .row
+        .col-lg-12.col-md-12.col-sm-12.col-xs-12
+          h1!=the_field('course_title')
+      .row.offering-description
+        - if(!$photo):
+          .col-lg-12.col-md-12.col-sm-12.col-xs-12
+            !=the_field('course_description_brief')
+            !=the_field('course_description')
+        - else:
+          .col-lg-8.col-md-8.col-sm-6.col-xs-12
+            !=the_field('course_description_brief')
+            !=the_field('course_description')
+          .col-lg-4.col-md-4.col-sm-6.hidden-xs
+            img(src!="<?php echo $photo['url']; ?>").img-responsive
+        - endif;
+      
+      .row
+          - foreach(get_field('course_details') as $details):
+              .col-lg-4.col-md-4.col-sm-6.col-xs-12.equal-heights.detail-list
+                h4!= $details['detail_title']
+                ul
+                  - foreach($details['detail_list'] as $item):
+                    li!=$item['detail_item']
+                  - endforeach;
+          - endforeach;

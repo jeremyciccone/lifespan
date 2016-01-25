@@ -1,0 +1,17 @@
+:php
+  // Template Name: Blog Post
+  get_template_part( 'partials/head' );
+  get_template_part( 'partials/header' );
+
+.wrapper
+  .container-fluid
+    .container
+      .row
+        .col-lg-12.col-md-12.col-sm-12.col-xs-12
+          :php
+            while ( have_posts() ) : the_post();
+              get_template_part( 'partials/news-views/blogpost' );
+            endwhile;
+  
+:php
+  get_template_part( 'partials/footer' );

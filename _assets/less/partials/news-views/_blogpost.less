@@ -1,0 +1,45 @@
+article.blogpost {
+  border-top:1px solid @md_grey;
+  padding:0 15px 15px 15px;
+
+  span.date {
+    color:@x_dk_grey;
+    .Domine();
+    font-size:14px;
+    display:block;
+    padding-bottom:5px;
+  }
+
+  p {
+    margin:0;
+    color:@xx_dk_grey;
+  }
+
+  p + p {
+    margin-top:10px;
+  }
+
+  ul {
+    color:@xx_dk_grey;
+    font-weight:300;
+    font-size:15px;
+    margin-bottom:15px;
+    li {
+      margin-bottom:5px;
+      &:last-child {
+        margin-bottom: 15px;
+      }
+
+      ul {
+        margin-bottom:5px;
+        margin-top:5px;
+        li {
+          &:last-child {
+            margin-bottom:5px;
+          }
+        }
+      }
+    }
+
+  }
+}

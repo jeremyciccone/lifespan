@@ -1,0 +1,68 @@
+:php
+  // Template Name: News and Views
+
+  get_template_part( 'partials/head' );
+  get_template_part( 'partials/header' );
+
+
+.wrapper
+  .container-fluid.leadin
+    .container
+      .row
+        .col-lg-12.col-md-12.col-sm-12.col-xs-12
+          h1 News & Views
+  .container-fluid
+    .container
+      .row
+        .col-lg-8.col-md-8.col-sm-12.col-xs-12.blogposts
+          :php
+            $args = array(
+              'post_type' => 'post',
+              'posts_per_page' => 5,
+              'order' => 'ASC',
+              'orderby' => 'date');
+            
+            // The Query
+            $the_query = new WP_Query( $args );
+
+            // The Loop
+            if ( $the_query->have_posts() ) {
+            	while ( $the_query->have_posts() ) {
+            		$the_query->the_post();
+                get_template_part( 'partials/news-views/blogpost' );
+            	}
+            } else {
+            	// no posts found
+            }
+            // Restore original Post Data
+            wp_reset_postdata();
+        
+        .col-lg-4.col-md-4.col-sm-12.col-sm-12
+          h3.styled Recent Posts
+          ul.recentposts
+            :php
+              $args = array(
+                'post_type' => 'post',
+                'posts_per_page' => 15,
+                'order' => 'ASC',
+                'orderby' => 'date');
+              
+              // The Query
+              $the_query = new WP_Query( $args );
+
+              // The Loop
+              if ( $the_query->have_posts() ) {
+              	while ( $the_query->have_posts() ) {
+              		$the_query->the_post();
+                  get_template_part( 'partials/news-views/recentpost' );
+              	}
+              } else {
+              	// no posts found
+              }
+              // Restore original Post Data
+              wp_reset_postdata();
+
+
+    
+  :php
+    get_template_part( 'partials/footer' );
