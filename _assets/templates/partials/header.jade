@@ -1,10 +1,12 @@
+:php
+  $logo = get_field('logo', 'option');
 header(data-spy="affix" data-offset-top="0")
   .container-fluid
     .container.branding
       .row
         .col-lg-4.col-md-6.col-sm-4.col-xs-12
           a(href="/")
-            img(src!="<?php echo get_field('logo', 'option')['url']; ?>").img-responsive
+            img(src!="<?php echo $logo['url']; ?>").img-responsive
         .col-lg-4.col-lg-offset-4.col-md-6.col-sm-8.hidden-xs
           ul.contact
             li 235 E. Ponce de Leon Ave.

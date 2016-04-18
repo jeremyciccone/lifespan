@@ -44,8 +44,8 @@
     .row
       - foreach($offerings as $key => $offering):
         .col-lg-4.col-md-4.col-sm-6.col-xs-12
-          .offering-wrap
-            a(href!="<?php echo $offering['url']; ?>").offering.equal-heights
+          .offering-wrap.equal-heights
+            a(href!="<?php echo $offering['url']; ?>").offering
               h4!=$offering['course_title']
               .description
                 !=$offering['course_description_brief']

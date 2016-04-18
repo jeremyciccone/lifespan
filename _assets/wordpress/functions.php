@@ -39,7 +39,6 @@ function lifespan_scripts() {
 add_action( 'wp_enqueue_scripts', 'lifespan_scripts' );
 
 
-
 // Register Custom Post Type
 function custom_post_offering() {
 
